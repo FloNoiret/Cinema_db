@@ -1,12 +1,31 @@
 -- Jeu de Données de tests
 
-INSERT INTO users (surname, name, roles, email)
+INSERT INTO users (surname, name, email)
  VALUES
- ('CEZAIRE', 'Virginie', 'ROLE_CUSTOMER', 'c.virginie@test.fr'),
-('Carambar', 'Haribo', 'ROLE_CUSTOMER', 'haribo@test.fr'),
-('Dragibus', 'Gus', 'ROLE_CUSTOMER', 'gus@test.fr');
+ ('CEZAIRE', 'Virginie', 'c.virginie@test.fr'),
+ ('Carambar', 'Haribo', 'haribo@test.fr'),
+ ('Dragibus', 'Gus', 'gus@test.fr');
 
+INSERT INTO Roles (name)
+VALUES
+    ('Admin'),
+    ('Manager'),
+    ('Employee'), 
+    ('Customer');
 
+INSERT INTO UserRoles (`user_id`, `role_id`)
+VALUES 
+ (1, 1),
+ (1, 2),
+ (1, 3),
+ (1, 4),
+ (2, 2),
+ (3, 2),
+ (4, 2),
+ (5, 3),
+ (5, 4),
+ (6, 4),
+ (7, 4);
 
 INSERT INTO tarifs (name, price)
  VALUES
@@ -20,8 +39,8 @@ INSERT INTO movies (title, description, blockbuster)
  ('Barbie', "Barbie, qui vit à Barbie Land, est expulsée du pays pour être loin dêtre une poupée à lapparence parfaite; n'ayant nulle part où aller, elle part pour le monde humain et cherche le vrai bonheur.", 1),
  ('Incendie', "Lorsque le notaire Lebel fait à Jeanne et Simon Marwan la lecture du testament de leur mère Nawal, les jumeaux sont sidérés de se voir remettre deux enveloppes, l'une destinée à un père qu'ils croyaient mort et l'autre à un frère dont ils ignoraient l'existence. Jeanne voit dans cet énigmatique legs la clé du silence de Nawal, enfermée ces dernières années dans un mutisme obstiné depuis son lit d'hôpital. Elle part au Moyen-Orient exhumer le passé de cette famille dont elle ne sait presque rien.", 0),
  ('Oppenheimer', "Pendant la Seconde Guerre mondiale, le lieutenant-général Leslie Groves Jr. nomme le physicien J. Robert Oppenheimer pour travailler sur le projet ultra-secret Manhattan. Oppenheimer et une équipe de scientifiques passent des années à développer et à concevoir la bombe atomique. Leur travail se concrétise le 16 juillet 1945, alors qu'ils assistent à la première explosion nucléaire au monde, changeant à jamais le cours de l'histoire.", 1),
-   ('Dragons', "Hiccup est un adolescent viking de l'île de Berk, où se battre avec des dragons est un mode de vie. Ses idées progressistes et son sens de l'humour étrange le tiennent à part des autres, malgré le fait que son père est le chef du clan. Entraîné dans une école de combat de dragon, il essaie de prouvr qu'il est un vrai viking. Mais quand il se lie d'amitier avec un dragon blessé qu'il nomme Kromou, il a la chance de tracer une nouvelle voie pour l'avenir de son peuple.", 0),
-   ('WANTED', "Ayant appris que son père, tué la veille, était un assassin d'élite faisant partie d'une organisation millénaire appelée la Fraternité, un modeste employé de bureau accepte de se joindre à ce groupe et de se soumettre à un entraînement exigeant au terme duquel il se découvre une habileté insoupçonnée. Se sentant fin prêt, il part pour l'Europe, berceau de la Fraternité, afin d'affronter l'assassin de son père, qui fait lui aussi partie de l'organisation.", 0);
+ ('Dragons', "Hiccup est un adolescent viking de l'île de Berk, où se battre avec des dragons est un mode de vie. Ses idées progressistes et son sens de l'humour étrange le tiennent à part des autres, malgré le fait que son père est le chef du clan. Entraîné dans une école de combat de dragon, il essaie de prouvr qu'il est un vrai viking. Mais quand il se lie d'amitier avec un dragon blessé qu'il nomme Kromou, il a la chance de tracer une nouvelle voie pour l'avenir de son peuple.", 0),
+ ('WANTED', "Ayant appris que son père, tué la veille, était un assassin d'élite faisant partie d'une organisation millénaire appelée la Fraternité, un modeste employé de bureau accepte de se joindre à ce groupe et de se soumettre à un entraînement exigeant au terme duquel il se découvre une habileté insoupçonnée. Se sentant fin prêt, il part pour l'Europe, berceau de la Fraternité, afin d'affronter l'assassin de son père, qui fait lui aussi partie de l'organisation.", 0);
 
 
 

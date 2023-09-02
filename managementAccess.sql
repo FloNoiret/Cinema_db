@@ -7,12 +7,12 @@ CREATE USER 'Lumieres'@'localhost' IDENTIFIED BY PASSWORD 'JuihfUbbur12';
 CREATE USER 'Mozart'@'localhost' IDENTIFIED BY PASSWORD 'lcjie2vrev';
 DELIMITER ;
 
-INSERT INTO users (surname, name, roles, email)
+INSERT INTO users (surname, name, email)
  VALUES
- ('Cinema_DB', 'Admin', 'ROLE_ADMIN', 'cinema_db@test.fr'),
- ('CineDumas', 'Manager', 'cinema_manager', 'cinedumas@test.fr'),
- ('Lumieres', 'Manager', 'cinema_manager', 'lumieres@test.fr'),
- ('Mozart', 'Manager', 'cinema_manager', 'mozart@test.fr');
+ ('Cinema_DB', 'Admin', 'cinema_db@test.fr'),
+ ('CineDumas', 'Manager', 'cinedumas@test.fr'),
+ ('Lumieres', 'Manager', 'lumieres@test.fr'),
+ ('Mozart', 'Manager', 'mozart@test.fr');
 
 -- Set Id to manager
 UPDATE users

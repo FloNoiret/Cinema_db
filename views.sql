@@ -104,3 +104,19 @@ JOIN
     projections p ON s.id = p.salle
 JOIN
     movies m ON p.movie = m.id;
+
+
+-- Voir les roles selon les users
+
+CREATE VIEW User_by_Roles AS
+SELECT
+    U.id AS user_id,
+    U.surname,
+    U.name,
+    R.name AS role
+FROM
+    Users U
+JOIN
+    UserRoles UR ON U.id = UR.user_id
+JOIN
+    Roles R ON UR.role_id = R.id;

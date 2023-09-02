@@ -10,7 +10,6 @@ CREATE TABLE `users`(
 `id` int(11) NOT NULL,
 `surname` varchar(50) not null,
 `name` varchar(50) not null,
-`roles` varchar(80),
 `email` varchar(250) not null);
 
 -- Index pour la table `users`
@@ -24,8 +23,33 @@ ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 
+-- Roles table
 
--- tickets Table
+CREATE TABLE `roles`(
+`id` int(11) NOT NULL,
+`name` varchar(50) not null);
+
+-- Index pour la table `roles`
+
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`);
+
+-- AUTO_INCREMENT pour la table `roles`
+
+ALTER TABLE `roles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+
+
+-- Junction Table UserRole
+
+CREATE TABLE `userRoles` (
+    `user_id` INT(11) NOT NULL,
+    `role_id` INT(11) NOT NULL,
+    PRIMARY KEY (`user_id`, `role_id`),
+    FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`),
+    FOREIGN KEY (`role_id`) REFERENCES `Roles` (`id`)
+);
 
 CREATE TABLE `tickets`(
 `id` int(11) NOT NULL,
@@ -46,7 +70,6 @@ ALTER TABLE `tickets`
 
 ALTER TABLE `tickets`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 
 
 

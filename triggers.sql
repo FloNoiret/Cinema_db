@@ -36,3 +36,25 @@ END;
 DELIMITER ;
 
 
+--- Créer une sauvegarde de la base de données
+
+DELIMITER //
+CREATE EVENT BackupEvent
+ON SCHEDULE EVERY 1 DAY
+DO
+BEGIN
+    DECLARE backup_filename VARCHAR(255);
+    -- Set the name of the file
+    SET backup_filename = CONCAT('C:/Users/flora/OneDrive/Documents/STUDI/Cinema_db/backup_', DATE_FORMAT(NOW(), '%Y%m%d%H%i%S'), '.sql');
+    -- Enable the event scheduler from your database system
+    SET GLOBAL event_scheduler = ON;
+    -- Run mysqldump command to create a backup
+    SET @sql_command = CONCAT(
+        'mysqldump -uroot -proot cinema_db > "', backup_filename, '"'
+    );
+    PREPARE stmt FROM @sql_command;
+    EXECUTE stmt;
+    DEALLOCATE PREPARE stmt;
+END;
+//
+DELIMITER ;
