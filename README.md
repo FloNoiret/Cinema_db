@@ -16,7 +16,7 @@ Ainsi, j'ai divisé mes fichiers pour la création de ma base de données en plu
 
 1. Main = Création de la base données et de ses tables
 2. ManagementAccess = Creation des managers et admin, des fonctions pour les différentes actions (ajout, modification et suppression projection, ajout blockbuster) et les permissions.
-3. Triggers = Ajout d'une reservation à une projection et verification du nombre de places. 
+3. Triggers = Ajout d'une reservation à une projection et verification du nombre de places & Event avec script de sauvegarde et dump sql.
 4. Views = Permettre de visualiser et comprendre les données plus facilement.
 5. testvalues= Un jeu de données pour faire des tests sur la base de données.
 
